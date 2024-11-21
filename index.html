@@ -3,70 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Slideshow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .slideshow-container {
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .description {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 3px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 </head>
 <body>
-    <h2>Daftar Game</h2>
-    <div class="game-list">
-        <div class="game-item">
-            <section id="slideshow">
-                <div class="slideshow-container">
-                    <!-- Slide 1 -->
-                    <div class="slide fade">
-                        <img src="PES.jpeg" alt="Gambar 1">
-                        <div class="caption">Pes 24 = Strategic, tactic</div>
-                    </div>
-            
-                    <!-- Slide 2 -->
-                    <div class="slide fade">
-                        <img src="Resident Evil.jpeg" alt="Gambar 2">
-                        <div class="caption">Resident evil=Gendre Survival Horor</div>
-                    </div>
-            
-                    <!-- Slide 3 -->
-                    <div class="slide fade">
-                        <img src="Call of duty.jpeg" alt="Gambar 3">
-                        <div class="caption">Strategic, Survival</div>
-                    </div>
-            
-                    <!-- Slide 4 -->
-                    <div class="slide fade">
-                        <img src="Naruto Shipuden.jpeg" alt="Gambar 4">
-                        <div class="caption">Strategic, Survival, Action </div>
-                    </div>
-            
-                    <!-- Slide 5 -->
-                    <div class="slide fade">
-                        <img src="GTA.jpeg" alt="Gambar 5">
-                        <div class="caption">Action, Adventure</div>
-                    </div>
-            
-                    <!-- Slide 6 -->
-                    <div class="slide fade">
-                        <img src="Yakuza 6.jpeg" alt="Gambar 6">
-                        <div class="caption">Action, Adventure</div>
-                    </div>
-            
-                    <!-- Navigation buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br>
-                <!-- Dots -->
-                <div class="dots-container">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <span class="dot" onclick="currentSlide(6)"></span>
-                </div>
-            </section>
-            
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="Naruto Shipuden.jpeg" alt="Image 1">
+            <div class="description">Penjelasan gambar 1</div>
         </div>
-    </div>
-</section>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="image2.jpg" alt="Image 2">
+            <div class="description">Penjelasan gambar 2</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="image3.jpg" alt="Image 3">
+            <div class="description">Penjelasan gambar 3</div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="image4.jpg" alt="Image 4">
+            <div class="description">Penjelasan gambar 4</div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="image5.jpg" alt="Image 5">
+            <div class="description">Penjelasan gambar 5</div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="slide">
+            <img src="image6.jpg" alt="Image 6">
+            <div class="description">Penjelasan gambar 6</div>
+        </div>
 
+        <!-- Navigation -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function changeSlide(step) {
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Tampilkan slide pertama saat halaman dimuat
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
