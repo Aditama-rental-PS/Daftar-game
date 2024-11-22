@@ -1,46 +1,104 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slideshow Gambar dengan Zoom dan Penjelasan</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="script.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricelist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .card p {
+            color: #777;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        .card .price {
+            color: #ff5733;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .card button {
+            background: #ff5733;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background: #e04c2a;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="slideshow-container">
-    <div class="slide">
-      <img src="Naruto Shipuden.jpeg" alt="Image 1" class="slide-image">
-      <p class="caption">Penjelasan gambar 1: Action, Adventure, Strategic.</p>
+    <div class="container">
+        <div class="card">
+            <h3>Paket Basic</h3>
+            <p>Cocok untuk kebutuhan kecil</p>
+            <p class="price">Rp100.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Standard</h3>
+            <p>Rekomendasi untuk penggunaan sedang</p>
+            <p class="price">Rp200.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Premium</h3>
+            <p>Fitur lengkap untuk bisnis</p>
+            <p class="price">Rp500.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Ultimate</h3>
+            <p>Solusi terbaik tanpa batas</p>
+            <p class="price">Rp1.000.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
     </div>
-    <div class="slide">
-      <img src="image2.jpg" alt="Image 2" class="slide-image">
-      <p class="caption">Penjelasan gambar 2: Deskripsi gambar kedua.</p>
-    </div>
-    <div class="slide">
-      <img src="image3.jpg" alt="Image 3" class="slide-image">
-      <p class="caption">Penjelasan gambar 3: Deskripsi gambar ketiga.</p>
-    </div>
-    <div class="slide">
-      <img src="image4.jpg" alt="Image 4" class="slide-image">
-      <p class="caption">Penjelasan gambar 4: Deskripsi gambar keempat.</p>
-    </div>
-    <div class="slide">
-      <img src="image5.jpg" alt="Image 5" class="slide-image">
-      <p class="caption">Penjelasan gambar 5: Deskripsi gambar kelima.</p>
-    </div>
-    <div class="slide">
-      <img src="image6.jpg" alt="Image 6" class="slide-image">
-      <p class="caption">Penjelasan gambar 6: Deskripsi gambar keenam.</p>
-    </div>
-  </div>
-
-  <div id="zoomModal" class="zoom-modal">
-    <span class="close" id="closeZoom">&times;</span>
-    <img id="zoomedImage" class="zoomed-image">
-    <p id="zoomCaption" class="zoom-caption"></p>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
