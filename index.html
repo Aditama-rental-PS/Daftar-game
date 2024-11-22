@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricelist</title>
+    <title>Pricelist - 8 Kolom</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1 1 calc(25% - 20px);
+            flex: 1 1 calc(25% - 20px); /* 4 kolom dalam satu baris */
             margin: 10px;
             padding: 20px;
             text-align: center;
@@ -63,12 +63,12 @@
         }
         @media (max-width: 768px) {
             .card {
-                flex: 1 1 calc(50% - 20px);
+                flex: 1 1 calc(50% - 20px); /* 2 kolom pada perangkat tablet */
             }
         }
         @media (max-width: 480px) {
             .card {
-                flex: 1 1 100%;
+                flex: 1 1 100%; /* 1 kolom pada perangkat kecil */
             }
         }
     </style>
@@ -97,6 +97,30 @@
             <h3>Paket Ultimate</h3>
             <p>Solusi terbaik tanpa batas</p>
             <p class="price">Rp1.000.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Silver</h3>
+            <p>Cocok untuk pemula</p>
+            <p class="price">Rp150.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Gold</h3>
+            <p>Untuk usaha kecil</p>
+            <p class="price">Rp300.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Diamond</h3>
+            <p>Fitur eksklusif untuk profesional</p>
+            <p class="price">Rp750.000</p>
+            <button>Pesan Sekarang</button>
+        </div>
+        <div class="card">
+            <h3>Paket Platinum</h3>
+            <p>Fasilitas terbaik tanpa kompromi</p>
+            <p class="price">Rp1.500.000</p>
             <button>Pesan Sekarang</button>
         </div>
     </div>
