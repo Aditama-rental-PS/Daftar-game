@@ -1,119 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshow</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .slideshow-container {
-            width: 80%;
-            max-width: 800px;
-            position: relative;
-            overflow: hidden;
-        }
-        .slide {
-            display: none;
-            text-align: center;
-        }
-        .slide img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .description {
-            margin-top: 15px;
-            font-size: 16px;
-            color: #333;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: auto;
-            padding: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            border-radius: 3px;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
-        }
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow Gambar dengan Zoom dan Penjelasan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
 </head>
 <body>
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="slide">
-            <img src="Naruto Shipuden.jpeg" alt="Image 1">
-            <div class="description">Penjelasan gambar 1</div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-            <img src="image2.jpg" alt="Image 2">
-            <div class="description">Penjelasan gambar 2</div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="slide">
-            <img src="image3.jpg" alt="Image 3">
-            <div class="description">Penjelasan gambar 3</div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="slide">
-            <img src="image4.jpg" alt="Image 4">
-            <div class="description">Penjelasan gambar 4</div>
-        </div>
-        <!-- Slide 5 -->
-        <div class="slide">
-            <img src="image5.jpg" alt="Image 5">
-            <div class="description">Penjelasan gambar 5</div>
-        </div>
-        <!-- Slide 6 -->
-        <div class="slide">
-            <img src="image6.jpg" alt="Image 6">
-            <div class="description">Penjelasan gambar 6</div>
-        </div>
-
-        <!-- Navigation -->
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="Naruto Shipuden.jpeg" alt="Image 1" class="slide-image">
+      <p class="caption">Penjelasan gambar 1: Action, Adventure, Strategic.</p>
     </div>
+    <div class="slide">
+      <img src="image2.jpg" alt="Image 2" class="slide-image">
+      <p class="caption">Penjelasan gambar 2: Deskripsi gambar kedua.</p>
+    </div>
+    <div class="slide">
+      <img src="image3.jpg" alt="Image 3" class="slide-image">
+      <p class="caption">Penjelasan gambar 3: Deskripsi gambar ketiga.</p>
+    </div>
+    <div class="slide">
+      <img src="image4.jpg" alt="Image 4" class="slide-image">
+      <p class="caption">Penjelasan gambar 4: Deskripsi gambar keempat.</p>
+    </div>
+    <div class="slide">
+      <img src="image5.jpg" alt="Image 5" class="slide-image">
+      <p class="caption">Penjelasan gambar 5: Deskripsi gambar kelima.</p>
+    </div>
+    <div class="slide">
+      <img src="image6.jpg" alt="Image 6" class="slide-image">
+      <p class="caption">Penjelasan gambar 6: Deskripsi gambar keenam.</p>
+    </div>
+  </div>
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+  <div id="zoomModal" class="zoom-modal">
+    <span class="close" id="closeZoom">&times;</span>
+    <img id="zoomedImage" class="zoomed-image">
+    <p id="zoomCaption" class="zoom-caption"></p>
+  </div>
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = i === index ? 'block' : 'none';
-            });
-        }
-
-        function changeSlide(step) {
-            currentSlide = (currentSlide + step + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Tampilkan slide pertama saat halaman dimuat
-        showSlide(currentSlide);
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
