@@ -27,3 +27,12 @@ header {
     color: #fff;
     justify-content: space-between;
   }
+  .cta {
+    padding: 10px 20px;
+    background: #f04;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
